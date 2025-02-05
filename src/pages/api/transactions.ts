@@ -80,6 +80,7 @@ export default async function handler(
 }
 
 const fetchTransactions = async () => {
+  await new Promise((res) => setTimeout(res, 300));
   return [
     {
       date: '2025-02-03',

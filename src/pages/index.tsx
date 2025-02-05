@@ -7,10 +7,10 @@ import Charts from '@/ui/Charts';
 
 const queryClient = new QueryClient();
 
-export default function Home() {
+export default function Home(initalBusinessData: BusinessData) {
   return (
     <QueryClientProvider client={queryClient}>
-      <MetricsSummary />
+      <MetricsSummary initialData={initalBusinessData} />
       <RecentTransactions />
       <Charts />
     </QueryClientProvider>
@@ -18,15 +18,13 @@ export default function Home() {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('http://localhost:3000/api/business');
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/business`);
   let data;
   if (res.ok) {
     data = (await res.json()) as BusinessData;
   }
 
   return {
-    props: {
-      businessName: data?.businessName ?? '',
-    },
+    props: data ?? {},
   };
 };

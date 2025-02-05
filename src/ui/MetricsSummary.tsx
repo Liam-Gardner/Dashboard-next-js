@@ -2,11 +2,13 @@ import { getBusinessData, getBusinessDataKey } from '@/services/getBusinessData'
 import { useQuery } from '@tanstack/react-query';
 import Card from './Card';
 import CardSkeleton from './Card/CardSkeletonLoader';
+import type { BusinessData } from '@/pages/api/business';
 
-export default function MetricsSummary() {
+export default function MetricsSummary({ initialData }: { initialData: BusinessData }) {
   const { data, isError, isPending } = useQuery({
     queryKey: [getBusinessDataKey],
     queryFn: getBusinessData,
+    initialData,
   });
 
   if (isError) {

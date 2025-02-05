@@ -2,7 +2,15 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+### env variables
+
+- For local development add your base URL to a `.env.local` file:
+
+```
+NEXT_PUBLIC_API_BASE_URL=http://localhost:3000
+```
+
+Then, run the development server:
 
 ```bash
 pnpm dev
