@@ -20,3 +20,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [ ] Add sort buttons for all columns
 - [ ] use zod for validation
 - [ ] use localstorage to remember user preferences for Table queries
+- [ ] handle no data on charts

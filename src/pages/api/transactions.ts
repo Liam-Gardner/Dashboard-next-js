@@ -82,31 +82,31 @@ export default async function handler(
 const fetchTransactions = async () => {
   return [
     {
-      date: '2025-01-23',
+      date: '2025-02-03',
       customerName: 'Harper Robinson',
       description: 'Clothing Purchase',
       points: 25,
     },
     {
-      date: '2025-01-23',
+      date: '2025-02-03',
       customerName: 'Elijah Clark',
       description: 'Restaurant Bill',
       points: 35,
     },
     {
-      date: '2025-01-25',
+      date: '2025-02-05',
       customerName: 'Abigail Rodriguez',
       description: 'Movie Tickets',
       points: 15,
     },
     {
-      date: '2025-01-26',
+      date: '2025-02-04',
       customerName: 'Daniel Lewis',
       description: 'Gym Membership',
       points: 40,
     },
     {
-      date: '2025-01-27',
+      date: '2025-02-02',
       customerName: 'Sofia Lee',
       description: 'Book Purchase',
       points: 20,
