@@ -29,3 +29,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [ ] use zod for validation
 - [ ] use localstorage to remember user preferences for Table queries
 - [ ] handle no data on charts
+- [ ] add error boundary to the App
