@@ -20,7 +20,6 @@ export default async function handler(
 }
 
 const getBusinessData = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 1200));
   return {
     businessName: 'Yellow Door Coffee',
     totalCustomers: 120,
