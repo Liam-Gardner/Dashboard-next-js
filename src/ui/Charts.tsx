@@ -65,6 +65,35 @@ export default function Charts() {
     }, {} as Record<string, number>);
   }, [data]);
 
+  const options = useMemo(
+    () => ({
+      plugins: {
+        legend: {
+          labels: {
+            color: isDarkMode ? '#ffffff' : '#000000',
+          },
+        },
+        title: {
+          display: true,
+          color: isDarkMode ? '#ffffff' : '#000000',
+        },
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: isDarkMode ? '#ffffff' : '#000000',
+          },
+        },
+        y: {
+          ticks: {
+            color: isDarkMode ? '#ffffff' : '#000000',
+          },
+        },
+      },
+    }),
+    [isDarkMode]
+  );
+
   if (isPending) {
     return <ChartSkeleton />;
   }
@@ -109,32 +138,6 @@ export default function Charts() {
     ],
   };
 
-  const options = {
-    plugins: {
-      legend: {
-        labels: {
-          color: isDarkMode ? '#ffffff' : '#000000',
-        },
-      },
-      title: {
-        display: true,
-        color: isDarkMode ? '#ffffff' : '#000000',
-      },
-    },
-    scales: {
-      x: {
-        ticks: {
-          color: isDarkMode ? '#ffffff' : '#000000',
-        },
-      },
-      y: {
-        ticks: {
-          color: isDarkMode ? '#ffffff' : '#000000',
-        },
-      },
-    },
-  };
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
       <div className="bg-white p-6 rounded-lg shadow-md dark:bg-gray-700">
@@ -143,7 +146,10 @@ export default function Charts() {
       </div>
       <div className="bg-white p-6 rounded-lg shadow-md dark:bg-gray-700">
         <h2 className="text-lg font-semibold mb-4">Points Distribution By Last 5 Categories</h2>
-        <Pie data={categoryDistributionData} options={options} />
+        <Pie
+          data={categoryDistributionData}
+          options={{ ...options, scales: { x: { display: false } } }}
+        />
       </div>
     </div>
   );
